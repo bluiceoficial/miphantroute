@@ -1,8 +1,8 @@
 <?php
 // Copyright (C) 2025 Murilo Gomes Julio
-// SPDX-License-Identifier: MIT
+// SPDX-License-Identifier: LGPL-2.1-only
 
-// Site: https://github.com/mugomes
+// Site: https://www.mugomes.com.br
 
 namespace MiPhantRoute;
 

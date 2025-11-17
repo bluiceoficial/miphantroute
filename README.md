@@ -8,12 +8,15 @@ MiPhantRoute é uma biblioteca para trabalhar com rotas de uma forma mais fácil
 
 ## Support
 
-- https://www.mugomes.com.br/p/apoie.html
+- GitHub: https://github.com/sponsors/mugomes/
+- More: https://www.mugomes.com.br/apoie.html
 
 ## License
 
-Copyright (c) 2025 Murilo Gomes Julio
+The MiPhantRoute is provided under:
 
-Licensed under the [MIT](https://github.com/mugomes/miphantroute/blob/main/LICENSE) license.
+[SPDX-License-Identifier: LGPL-2.1-only](https://github.com/mugomes/miphantroute/blob/main/LICENSE)
+
+Beign under the terms of the GNU Lesser General Public License version 2.1 only.
 
 All contributions to the MiPhantRoute are subject to this license.
