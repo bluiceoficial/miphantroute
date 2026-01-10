@@ -1,18 +1,28 @@
 <?php
-// Copyright (C) 2025 Murilo Gomes Julio
-// SPDX-License-Identifier: LGPL-2.1-only
+// Copyright (C) 2025-2026 Murilo Gomes Julio
+// SPDX-License-Identifier: MIT
 
-// Site: https://www.mugomes.com.br
+// Site: https://mugomes.github.io
 
 namespace MiPhantRoute;
 
 class MiPhantRoute
 {
     private array $sURLs = [];
+    private bool $error404 = true;
 
-    public function __construct()
+    public function __construct($cliServer = false)
     {
-        $sURLs = rtrim(parse_url($this->CleanDB(getenv('REQUEST_URI')), PHP_URL_PATH), '/');
+        $sRequestURI = getenv('REQUEST_URI');
+        if ($cliServer) {
+            $sRequestURI = $_SERVER['REQUEST_URI'];
+        }
+        if (version_compare(PHP_VERSION, '8.5.0', '>=')) {
+            $uri = new \Uri\Rfc3986\Uri($sRequestURI);
+            $sURLs = rtrim($uri->getPath(), '/');
+        } else {
+            $sURLs = rtrim(parse_url($this->CleanDB($sRequestURI), PHP_URL_PATH), '/');
+        }
         if (empty($sURLs)) {
             $sURLs = '/';
         }
@@ -73,5 +83,26 @@ class MiPhantRoute
     public function getLastURL(): string
     {
         return end($this->sURLs[1]);
+    }
+
+    /**
+     * Aplica conceito do paradigma funcional
+     */
+    public function getPart(string $name, callable $function)
+    {
+        $sURL = (empty($this->getFullURL())) ? '/' : sprintf('/%s', $this->getFullURL());
+
+        if (preg_match('#^' . $name . '$#iu', $sURL, $matches)) {
+            array_shift($matches);
+            call_user_func_array($function, $matches);
+            $this->error404 = false;
+        }
+    }
+
+    public function getError(callable $function)
+    {
+        if ($this->error404) {
+            $function();
+        }
     }
 }
