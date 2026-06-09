@@ -1,11 +1,17 @@
 {
-  "name": "mugomes/miphantroute",
-  "version": "3.0.0",
+  "name": "bluice/miphantroute",
+  "version": "3.0.1",
   "description": "Biblioteca para trabalhar com rotas de uma forma mais fácil.",
-  "license": "MIT",
+  "authors": [
+    {
+      "name": "Murilo Gomes",
+      "email": "comercial@bluice.com.br"
+    }
+  ],
   "_comment": [
     "Copyright (C) 2025-2026 Murilo Gomes Julio"
   ],
+  "license": "MIT",
   "autoload": {
     "psr-4": {
       "MiPhantRoute\\": "src/"
