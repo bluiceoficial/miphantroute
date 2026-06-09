@@ -25,7 +25,7 @@ Ela foi criada para quem deseja **controle total**, **zero dependências** e **n
 ### Via Composer
 
 ```bash
-composer require mugomes/miphantroute
+composer require bluiceoficial/miphantroute
 ```
 
 ### Manual
@@ -199,9 +199,9 @@ $route->getError(function () {
 
 **Murilo Gomes Julio**
 
-🔗 [https://mugomes.github.io](https://mugomes.github.io)
+🔗 [https://www.bluice.com.br](https://www.bluice.com.br)
 
-📺 [https://youtube.com/@mugomesoficial](https://youtube.com/@mugomesoficial)
+📺 [https://youtube.com/@bluiceoficial](https://youtube.com/@bluiceoficial)
 
 ---
 
@@ -209,6 +209,6 @@ $route->getError(function () {
 
 Copyright (c) 2025-2026 Murilo Gomes Julio
 
-Licensed under the [MIT](https://github.com/mugomes/miphantroute/blob/main/LICENSE).
+Licensed under the [MIT](https://github.com/bluiceoficial/miphantroute/blob/main/LICENSE).
 
 All contributions to the MiPhantRoute are subject to this license.
