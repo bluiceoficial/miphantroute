@@ -2,13 +2,14 @@
 // Copyright (C) 2025-2026 Murilo Gomes Julio
 // SPDX-License-Identifier: MIT
 
-// Site: https://mugomes.github.io
+// Site: https://www.bluice.com.br
 
 namespace MiPhantRoute;
 
 class MiPhantRoute
 {
     private array $sURLs = [];
+    private bool $encontrado = false;
     private bool $error404 = true;
 
     public function __construct($cliServer = false)
@@ -90,12 +91,15 @@ class MiPhantRoute
      */
     public function getPart(string $name, callable $function)
     {
-        $sURL = (empty($this->getFullURL())) ? '/' : sprintf('/%s', $this->getFullURL());
+        if (!$this->encontrado) {
+            $sURL = (empty($this->getFullURL())) ? '/' : sprintf('/%s', $this->getFullURL());
 
-        if (preg_match('#^' . $name . '$#iu', $sURL, $matches)) {
-            array_shift($matches);
-            call_user_func_array($function, $matches);
-            $this->error404 = false;
+            if (preg_match('#^' . $name . '$#iu', $sURL, $matches)) {
+                array_shift($matches);
+                call_user_func_array($function, $matches);
+                $this->error404 = false;
+                $this->encontrado = true;
+            }
         }
     }
 
