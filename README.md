@@ -25,7 +25,7 @@ Ela foi criada para quem deseja **controle total**, **zero dependências** e **n
 ### Via Composer
 
 ```bash
-composer require bluiceoficial/miphantroute
+composer require bluice/miphantroute
 ```
 
 ### Manual
