@@ -1,5 +1,8 @@
 # MiPhantRoute
 
+> [!NOTE]
+> This repository has been migrated to Codeberg, please see: https://codeberg.org/bluice/miphantroute
+
 **MiPhantRoute** é uma biblioteca **leve, minimalista e funcional em PHP** para **roteamento baseado em URL com suporte nativo a Expressões Regulares (Regex)**.
 
 Ela foi criada para quem deseja **controle total**, **zero dependências** e **nenhuma abstração excessiva**, sendo ideal para todo tipo de projeto.
